@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body {
+      background: #e9ecef;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .calculator {
+      width: 330px;
+      background: #222;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+    .screen {
+      width: 100%;
+      height: 70px;
+      background: #d4ffd4;
+      border-radius: 10px;
+      text-align: right;
+      padding: 2px;
+      font-size: 2rem;
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 25px;
+    }
+    button {
+      font-size: 1.5rem;
+      padding: 18px;
+      border: none;
+      background: #333;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 5px rgba(0, 0, 0, 0.5);
+      transition: 0.1s;
+    }
+    button:active { box-shadow: none; transform: translateY(3px); }
+    .operator { background: #ff9500; }
+    .equal { background: #28a745; }
+    .clear { background: #dc3545; grid-column: span 2; }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <form method="POST">
+      <input type="text" id="screen" class="screen" name="display" value="{{ display }}" readonly>
+
+      <div class="buttons">
+        <!-- number buttons -->
+        <button type="submit" name="key" value="7">7</button>
+        <button type="submit" name="key" value="8">8</button>
+        <button type="submit" name="key" value="9">9</button>
+        <button type="submit" class="operator" name="key" value="/">÷</button>
+
+        <button type="submit" name="key" value="4">4</button>
+        <button type="submit" name="key" value="5">5</button>
+        <button type="submit" name="key" value="6">6</button>
+        <button type="submit" class="operator" name="key" value="*">×</button>
+
+        <button type="submit" name="key" value="1">1</button>
+        <button type="submit" name="key" value="2">2</button>
+        <button type="submit" name="key" value="3">3</button>
+        <button type="submit" class="operator" name="key" value="-">−</button>
+
+        <button type="submit" name="key" value="0">0</button>
+        <button type="submit" name="key" value=".">.</button>
+        <button type="submit" class="equal" name="equal" value="=">=</button>
+        <button type="submit" class="operator" name="key" value="+">+</button>
+        <button type="submit" class="reverce" name="reverce" value="\">AC</button>
+
+        <button type="submit" class="clear" name="clear" value="C">C</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
